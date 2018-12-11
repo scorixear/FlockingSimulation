@@ -1,0 +1,4 @@
+rootProject.name = 'flocking'
+include 'model'
+include 'javafx'
+

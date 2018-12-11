@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+}
+
+group 'FlockingSimulation'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.10
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile project(':model')
+    compile group: 'com.jfoenix',name:'jfoenix',version:'1.2.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.1.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.1.0'
+    testCompile 'org.assertj:assertj-core:3.11.1'
+}
