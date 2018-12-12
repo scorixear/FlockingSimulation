@@ -50,7 +50,10 @@ public class Vector extends java.util.Vector<Double> implements Cloneable{
 
 
   public void normalize(){
-    div(length());
+    if(length()!=0){
+      div(length());
+    }
+
   }
 
   public double dist(Vector other){

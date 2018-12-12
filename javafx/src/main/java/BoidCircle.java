@@ -14,7 +14,6 @@ public class BoidCircle extends Circle {
     boid=b;
   }
   public void update(){
-
     setCenterX(boid.getPosition().get(0));
     setCenterY(boid.getPosition().get(1));
   }

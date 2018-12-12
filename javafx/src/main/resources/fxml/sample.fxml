@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1280.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="sampleController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sampleController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
@@ -28,9 +28,9 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Slider fx:id="alignSlider" blockIncrement="0.1" majorTickUnit="4.0" max="2.0" minorTickCount="5" showTickLabels="true" showTickMarks="true" value="1.0" />
-            <Slider fx:id="cohesionSlider" blockIncrement="0.1" majorTickUnit="4.0" max="2.0" minorTickCount="5" showTickLabels="true" showTickMarks="true" value="1.0" GridPane.columnIndex="1" />
-            <Slider fx:id="separationSlider" blockIncrement="0.1" majorTickUnit="4.0" max="2.0" minorTickCount="5" showTickLabels="true" showTickMarks="true" value="1.0" GridPane.columnIndex="2" />
+            <Slider fx:id="alignSlider" blockIncrement="0.1" majorTickUnit="4.0" max="2.0" minorTickCount="5" showTickLabels="true" showTickMarks="true" />
+            <Slider fx:id="cohesionSlider" blockIncrement="0.1" majorTickUnit="4.0" max="2.0" minorTickCount="5" showTickLabels="true" showTickMarks="true" GridPane.columnIndex="1" />
+            <Slider fx:id="separationSlider" blockIncrement="0.1" majorTickUnit="4.0" max="2.0" minorTickCount="5" showTickLabels="true" showTickMarks="true" GridPane.columnIndex="2" />
             <Label text="Alignment" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
                <font>
                   <Font size="14.0" />

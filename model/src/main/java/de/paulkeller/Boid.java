@@ -13,7 +13,7 @@ public class Boid {
   private double maxForce;
   public Boid(double x, double y, double maxVelocity, double maxForce){
     position = new Vector(x, y);
-    velocity = new Vector(Math.random()*maxVelocity,Math.random()*maxVelocity);
+    velocity = new Vector((-maxVelocity/2)+Math.random()*maxVelocity,(-maxVelocity/2)+Math.random()*maxVelocity);
     acceleration=new Vector(0.0,0.0);
     this.maxVelocity=maxVelocity;
     this.maxForce=maxForce;
@@ -51,15 +51,26 @@ public class Boid {
 
     //alignment
     this.acceleration.add(genSteering(boids,(t,other,d)-> other.velocity,false,50).mult(alignment));
+
     //cohesion
-    this.acceleration.add(genSteering(boids,(t,other,d)->other.velocity,true,100).mult(cohesion));
+    this.acceleration.add(genSteering(boids,(t,other,d)->other.position,true,100).mult(cohesion));
+
     //separation
     this.acceleration.add(genSteering(boids,(t,other,d)->{
       Vector pos = t.position.clone();
+
       pos.sub(other.position);
-      pos.div(d*d);
+
+      if(pos.get(0)==0&&pos.get(1)==0) {
+        return pos;
+      }else{
+        pos.div(d*d);
+      }
+
+
       return pos;
     },false,50).mult(separation));
+
   }
 
   public void update() {
