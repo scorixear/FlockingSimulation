@@ -53,21 +53,14 @@ public class Boid {
     this.acceleration.add(genSteering(boids,(t,other,d)-> other.velocity,false,50).mult(alignment));
 
     //cohesion
-    this.acceleration.add(genSteering(boids,(t,other,d)->other.position,true,100).mult(cohesion));
+    this.acceleration.add(genSteering(boids,(t,other,d)->other.position,true,50).mult(cohesion));
 
     //separation
     this.acceleration.add(genSteering(boids,(t,other,d)->{
       Vector pos = t.position.clone();
-
       pos.sub(other.position);
-
-      if(pos.get(0)==0&&pos.get(1)==0) {
-        return pos;
-      }else{
-        pos.div(d*d);
-      }
-
-
+      if(pos.get(0)==0&&pos.get(1)==0) return pos;
+      else pos.div(d*d);
       return pos;
     },false,50).mult(separation));
 
