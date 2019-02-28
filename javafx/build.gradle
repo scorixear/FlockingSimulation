@@ -1,9 +1,12 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
 group 'FlockingSimulation'
 version '1.0-SNAPSHOT'
+mainClassName  = 'Main'
+
 
 sourceCompatibility = 1.8
 
