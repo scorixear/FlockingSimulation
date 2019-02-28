@@ -1,6 +1,4 @@
-import com.sun.jdi.DoubleValue;
 import de.paulkeller.Vector;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -111,7 +109,7 @@ public class VectorSpec {
     a.normalize();
     assertEquals(Double.valueOf(1.0),aclone.get(0));
     assertEquals(Double.valueOf(1.0),aclone.get(1));
-    assertNotEquals(Double.valueOf(1.0),a.get(0));
-    assertNotEquals(Double.valueOf(1.0),a.get(1));
+    assertNotEquals(1.0,a.get(0));
+    assertNotEquals(1.0,a.get(1));
   }
 }

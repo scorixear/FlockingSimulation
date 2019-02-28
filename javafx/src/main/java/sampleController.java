@@ -27,7 +27,6 @@ public class sampleController {
       BoidCircle c = new BoidCircle(b,b.getPosition().get(0),b.getPosition().get(1),5);
       gamePane.getChildren().add(c);
     }
-    System.out.println("got till here");
     Thread t = new Thread(()->{
       while(true){
         flock.runFlock(alignSlider.getValue(),cohesionSlider.getValue(),separationSlider.getValue());
